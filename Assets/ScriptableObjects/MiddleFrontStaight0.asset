@@ -1,0 +1,51 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1bbae57832376942b5907a25fcddafa, type: 3}
+  m_Name: MiddleFrontStaight0
+  m_EditorClassIdentifier: 
+  LaunchsData:
+  - LaunchFrom: 0
+    LauncherIndex: 0
+    Cycles: 1
+    Delay: 20
+    Ship: {fileID: 0}
+    MovesData: []
+  - LaunchFrom: 0
+    LauncherIndex: 2
+    Cycles: 1
+    Delay: 0
+    Ship: {fileID: 114481774379816338, guid: 318a6d992f751de439a2e609eaeed4a0, type: 2}
+    MovesData:
+    - Duration: 0
+      MoveType: 0
+      HideSpeed: 40
+      Looped: 1
+      HideSpeedTransit: 0
+  - LaunchFrom: 0
+    LauncherIndex: 5
+    Cycles: 1
+    Delay: 0
+    Ship: {fileID: 114481774379816338, guid: 318a6d992f751de439a2e609eaeed4a0, type: 2}
+    MovesData:
+    - Duration: 0
+      MoveType: 0
+      HideSpeed: 48
+      Looped: 1
+      HideSpeedTransit: 0
+  - LaunchFrom: 0
+    LauncherIndex: 0
+    Cycles: 1
+    Delay: 0
+    Ship: {fileID: 0}
+    MovesData: []
+  Timer: 2.924693
+  CurrentState: 0
+  CurrentCycle: 0

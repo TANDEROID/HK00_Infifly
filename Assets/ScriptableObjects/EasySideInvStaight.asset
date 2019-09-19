@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1bbae57832376942b5907a25fcddafa, type: 3}
+  m_Name: EasySideInvStaight
+  m_EditorClassIdentifier: 
+  LaunchsData:
+  - LaunchFrom: 1
+    LauncherIndex: 0
+    Cycles: 1
+    Delay: 2
+    Ship: {fileID: 0}
+    MovesData:
+    - Duration: 0
+      MoveType: 0
+      HideSpeed: 0
+      Looped: 1
+      HideSpeedTransit: 0
+  - LaunchFrom: -1
+    LauncherIndex: 0
+    Cycles: 3
+    Delay: 1
+    Ship: {fileID: 114886428109651346, guid: f888ef6b02bdc0a4787d082fcb1f1ebc, type: 2}
+    MovesData:
+    - Duration: 0
+      MoveType: 0
+      HideSpeed: 100
+      Looped: 1
+      HideSpeedTransit: 0
+  - LaunchFrom: 1
+    LauncherIndex: 0
+    Cycles: 1
+    Delay: 15
+    Ship: {fileID: 0}
+    MovesData: []
+  Timer: 0.9246921
+  CurrentState: 1
+  CurrentCycle: 0

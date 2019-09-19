@@ -1,0 +1,81 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e1bbae57832376942b5907a25fcddafa, type: 3}
+  m_Name: HardFrontWaveStaight
+  m_EditorClassIdentifier: 
+  LaunchsData:
+  - LaunchFrom: 1
+    LauncherIndex: 0
+    Cycles: 1
+    Delay: 30
+    Ship: {fileID: 0}
+    MovesData: []
+  - LaunchFrom: 0
+    LauncherIndex: 0
+    Cycles: 1
+    Delay: 1
+    Ship: {fileID: 114401156920499220, guid: 4343650c2a4ea3f439fe38226ed968bb, type: 2}
+    MovesData:
+    - Duration: 0
+      MoveType: 1
+      HideSpeed: 20
+      Looped: 0
+      HideSpeedTransit: 0
+    - Duration: 2
+      MoveType: 0
+      HideSpeed: 40
+      Looped: 0
+      HideSpeedTransit: 0.02
+    - Duration: 1
+      MoveType: 0
+      HideSpeed: 200
+      Looped: 0
+      HideSpeedTransit: 0.02
+    - Duration: 0
+      MoveType: 0
+      HideSpeed: 40
+      Looped: 1
+      HideSpeedTransit: 0.02
+  - LaunchFrom: 0
+    LauncherIndex: 1
+    Cycles: 1
+    Delay: 3
+    Ship: {fileID: 114401156920499220, guid: 4343650c2a4ea3f439fe38226ed968bb, type: 2}
+    MovesData:
+    - Duration: 0
+      MoveType: 1
+      HideSpeed: 20
+      Looped: 0
+      HideSpeedTransit: 0
+    - Duration: 2
+      MoveType: 0
+      HideSpeed: 40
+      Looped: 0
+      HideSpeedTransit: 0.02
+    - Duration: 1
+      MoveType: 0
+      HideSpeed: 200
+      Looped: 0
+      HideSpeedTransit: 0.02
+    - Duration: 0
+      MoveType: 0
+      HideSpeed: 40
+      Looped: 1
+      HideSpeedTransit: 0.02
+  - LaunchFrom: 1
+    LauncherIndex: 0
+    Cycles: 1
+    Delay: 5
+    Ship: {fileID: 0}
+    MovesData: []
+  Timer: 2.924693
+  CurrentState: 0
+  CurrentCycle: 0
