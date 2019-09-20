@@ -10,14 +10,11 @@ public class TurretBasic : MonoBehaviour {
     private float StateTimer;
     private float ShootTimer;
     private int CurrentState;
-    private int ShootCount;
 
     private void Awake()
     {
         StateTimer = 0f;
         StateTimer = 0f;
-        CurrentState = 0;
-        ShootCount = 0;
     }
 
     private void Update()
@@ -27,7 +24,7 @@ public class TurretBasic : MonoBehaviour {
 
         if (ShootData[CurrentState].Shoot)
         {
-            if (ShootTimer > ShootData[CurrentState].GetBeteweenShootDelay() && GameController.GameSpeed > 0.001f)
+            while (ShootTimer > ShootData[CurrentState].GetBeteweenShootDelay() && GameController.GameSpeed > 0.001f)
                 Shoot();
             ShootTimer += Time.deltaTime * GameController.GameSpeed;
         }
