@@ -103,13 +103,6 @@ public class FlightCurvePart
     public void UpdatePath()
     {
         Length = 0f;
-        int iterations = 20;
-        Vector3 prevPoint = StartNode.NodePosiion;
-        Vector3 currPoint;
-        for (int i = 0; i <= iterations; i++)
-        {
-
-        }
     }
 }
 
