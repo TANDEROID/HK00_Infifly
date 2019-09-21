@@ -24,6 +24,14 @@ public class FlightCurve : MonoBehaviour {
         for (int nodeIndex = 0; nodeIndex < CurveNodes.Count - 1; nodeIndex++)
         {
             prevPoint = CurveNodes[nodeIndex].NodePosiion;
+
+            CurveNodes[nodeIndex].SetupDemo();
+
+            Gizmos.color = Color.red;
+            Gizmos.DrawLine(
+                prevPoint + transform.position,
+                prevPoint + transform.position + CurveNodes[nodeIndex].GetMainRotation() * (Vector3.right * 100f));
+
             for (int i = 1; i <= iterations; i++)
             {
                 currPoint = CurveMath.NodeLerp(
@@ -34,14 +42,19 @@ public class FlightCurve : MonoBehaviour {
                 Gizmos.color = Color.white;
                 Gizmos.DrawLine(prevPoint + transform.position, currPoint + transform.position);
 
-                Gizmos.color = Color.red;
+
+                Gizmos.color = Color.green;
+
                 Gizmos.DrawLine(
                     prevPoint + transform.position,
-                    prevPoint + transform.position + Vector3.Normalize(Vector3.Lerp(
-                        CurveNodes[nodeIndex].MainHandlePositionReleative,
-                        CurveNodes[nodeIndex + 1].MainHandlePositionReleative,
-                        (float)i / (float)iterations))
-                    );
+                    prevPoint + transform.position +
+                        ((CurveNodes[nodeIndex].TransitionMode == FlightCurvePointerNodeTransitionMode.Aligned) ?
+                            Quaternion.LookRotation(Vector3.forward, Quaternion.Euler(Vector3.forward * 90f) * (currPoint - prevPoint)) : 
+                            Quaternion.Lerp(
+                                CurveNodes[nodeIndex].GetMainRotation(),
+                                CurveNodes[nodeIndex + 1].GetMainRotation(),
+                                (float)i / (float)iterations))
+                        * (Vector3.right * 50f));
 
                 prevPoint = currPoint;
             }
@@ -94,18 +107,6 @@ public static class CurveMath
     }
 }
 
-public class FlightCurvePart
-{
-    public float Length { get; private set; }
-    public FlightCurveNode StartNode;
-    public FlightCurveNode EndNode;
-
-    public void UpdatePath()
-    {
-        Length = 0f;
-    }
-}
-
 
 [System.Serializable]
 public class FlightCurveNode
@@ -117,6 +118,7 @@ public class FlightCurveNode
     public FlightCurvePointerNodeDirectionMode DirectionMode;
     public FlightCurvePointerNodeTransitionMode TransitionMode;
     public Vector3 CustomDirection;
+    public Transform DemoObj;
 
     public Vector3 GetMainHandlePos()
     {
@@ -139,6 +141,21 @@ public class FlightCurveNode
             default:
                 return NodePosiion;
         }
+    }
+
+    public Quaternion GetMainRotation()
+    {
+        if (DirectionMode == FlightCurvePointerNodeDirectionMode.Aligned)
+            return Quaternion.LookRotation(Vector3.forward,
+                Quaternion.Euler(Vector3.forward * 90f) * MainHandlePositionReleative);
+        else
+            return Quaternion.Euler(CustomDirection);
+    }
+
+    public void SetupDemo()
+    {
+        if (DemoObj != null)
+            DemoObj.rotation = GetMainRotation();
     }
 }
 
