@@ -1,6 +1,5 @@
-﻿using System.Collections;
+﻿using UnityEngine;
 using System.Collections.Generic;
-using UnityEngine;
 
 [CreateAssetMenu(menuName = "LaunchControllerSO")]
 public class LaunchControllerSO : ScriptableObject {

@@ -35,6 +35,6 @@ MonoBehaviour:
     Delay: 26.5
     Ship: {fileID: 0}
     MovesData: []
-  Timer: 0.42469162
-  CurrentState: 1
-  CurrentCycle: 2
+  Timer: 6.8693185
+  CurrentState: 2
+  CurrentCycle: 0
